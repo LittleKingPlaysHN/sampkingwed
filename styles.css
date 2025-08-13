@@ -578,38 +578,44 @@ footer a:focus {
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 768px) {
   nav {
-    flex-direction: row;           /* horizontal */
-    justify-content: space-between; /* logo a la izquierda, links a la derecha */
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    padding: 0.25rem 0.75rem;      /* más pequeño */
-    height: 50px;                  /* altura compacta */
+    padding: 0.25rem 0.75rem;
+    height: 50px;
+    backdrop-filter: blur(5px); /* menos blur */
+    box-shadow: 0 0 8px var(--neon-pink); /* menos brillo */
   }
 
   .nav-logo-text {
-    position: relative;             /* quitar absolute */
+    position: relative;
     left: 0;
     gap: 0.4rem;
-    font-size: 0.9rem;             /* más pequeño */
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center; /* centra logo y texto verticalmente */
   }
 
   .nav-logo {
-    width: 25px;                   /* logo más pequeño */
+    width: 25px;
     height: 25px;
+    margin: 0; /* elimina desplazamiento extra */
   }
 
   .nav-text {
-    font-size: 0.9rem;             /* texto más pequeño */
+    font-size: 0.9rem;
+    line-height: 1; /* alinea con el logo */
   }
 
   nav ul {
     flex-direction: row;
-    gap: 0.8rem;                   /* menos espacio entre links */
+    gap: 0.8rem;
     margin: 0;
     padding: 0;
   }
 
   nav ul li a {
-    font-size: 0.85rem;            /* links más pequeños */
+    font-size: 0.85rem;
     text-align: center;
     display: block;
     padding: 0.15rem 0.3rem;
