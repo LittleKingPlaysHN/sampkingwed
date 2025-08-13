@@ -576,7 +576,7 @@ footer a:focus {
 .section-title { animation-delay: 0.4s; }
 
 /* ---------- RESPONSIVE ---------- */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   nav {
     flex-direction: row;
     justify-content: space-between;
@@ -600,6 +600,11 @@ footer a:focus {
     width: 25px;
     height: 25px;
     margin: 0; /* elimina desplazamiento extra */
+    filter:
+      drop-shadow(0 0 2px #ff80f4)
+      drop-shadow(0 0 2px #ff80f4)
+      drop-shadow(0 0 5px #ffb6f3)
+      drop-shadow(0 0 0px #ffb1f1);
   }
 
   .nav-text {
