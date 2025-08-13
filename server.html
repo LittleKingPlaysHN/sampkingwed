@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,24 +6,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Servidores SAMP - SampKing</title>
   <style>
+  /* Fuente */
   @font-face {
     font-family: 'Yourmate';
     src: url('fonts/Yourmate.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
   }
+
+  /* Estilos globales */
   body {
     background: url('src/fondo3.jpg') no-repeat center center fixed;
     background-size: cover;
     font-family: 'Yourmate', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #fff;
-    margin: 0; padding: 0;
+    margin: 0; 
+    padding: 2rem;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2rem;
-    backdrop-filter: blur(8px);
   }
 
   .logo {
@@ -37,7 +40,9 @@
     margin-bottom: 1rem;
     text-shadow: 0 0 5px rgba(0,0,0,0.7);
     font-weight: normal;
+    text-align: center;
   }
+
   .server-list {
     max-width: 900px;
     width: 100%;
@@ -46,6 +51,7 @@
     overflow: hidden;
     box-shadow: 0 0 15px rgba(247, 0, 255, 0.7);
   }
+
   .server-item {
     display: flex;
     justify-content: space-between;
@@ -54,12 +60,15 @@
     align-items: center;
     transition: background 0.3s ease;
   }
+
   .server-item:last-child {
     border-bottom: none;
   }
+
   .server-item:hover {
     background: rgba(255, 255, 255, 0.2);
   }
+
   .server-name {
     font-weight: 700;
     font-size: 1.2rem;
@@ -69,6 +78,7 @@
     text-overflow: ellipsis;
     font-family: 'Yourmate', cursive;
   }
+
   .server-ip {
     font-family: monospace;
     color: #f3b8ff;
@@ -78,6 +88,7 @@
     text-overflow: ellipsis;
     font-weight: 600;
   }
+
   .server-status {
     font-weight: 700;
     color: #0f0;
@@ -85,26 +96,96 @@
     text-align: center;
     font-family: 'Yourmate', cursive;
   }
+
   .server-status.offline {
     color: #f33;
   }
+
   .server-players {
     min-width: 100px;
     text-align: center;
     font-weight: 600;
     font-family: 'Yourmate', cursive;
   }
-  @media (max-width: 600px) {
+
+  /* Botones */
+  .button-group {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    font-family: 'Yourmate', cursive;
+    background-color: #ff5de9;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 0 8px #ff5de9cc;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    user-select: none;
+    cursor: pointer;
+  }
+
+  .btn:hover,
+  .btn:focus {
+    background-color: #e03ed1;
+    box-shadow: 0 0 12px #e03ed1cc;
+    outline: none;
+  }
+
+  /* Media queries para tablets */
+  @media (max-width: 768px) {
+    body {
+      padding: 1rem;
+    }
+
+    .logo {
+      max-width: 150px;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
     .server-item {
       flex-direction: column;
       align-items: flex-start;
-      gap: 0.3rem;
+      gap: 0.5rem;
     }
-    .server-name, .server-ip, .server-status, .server-players {
+
+    .server-name, .server-ip, .server-players, .server-status {
       max-width: 100%;
-    }
-    .server-status, .server-players {
       text-align: left;
+    }
+
+    .button-group {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+  }
+
+  /* Media queries para celulares */
+  @media (max-width: 480px) {
+    .logo {
+      max-width: 120px;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    .server-item {
+      padding: 0.75rem 1rem;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      font-size: 0.9rem;
     }
   }
   </style>
@@ -112,6 +193,7 @@
 <body>
   <img src="src/logo.png" alt="Logo SampKing" class="logo" />
   <h1>Servidores SAMP - SampKing</h1>
+
   <div class="server-list" role="list">
     <div class="server-item" role="listitem">
       <div class="server-name" title="NewGamers #1 | Juego de Rol | Florida.">NewGamers #1 | Juego de Rol | Florida.</div>
@@ -131,100 +213,12 @@
       <div class="server-players">123 / 1000</div>
       <div class="server-status">Online</div>
     </div>
-    <div class="server-item" role="listitem">
-      <div class="server-name" title="Rolven RP | Latinoamerica | v1.2">Rolven RP | Latinoamerica | v1.2</div>
-      <div class="server-ip">samp.rolvenrp.com:7777</div>
-      <div class="server-players">34 / 500</div>
-      <div class="server-status">Online</div>
-    </div>
-    <div class="server-item" role="listitem">
-      <div class="server-name" title="Dixel Roleplay | Consigue Cofres">Dixel Roleplay | Consigue Cofres</div>
-      <div class="server-ip">198.50.207.186:7777</div>
-      <div class="server-players">91 / 600</div>
-      <div class="server-status">Online</div>
-    </div>
-    <div class="server-item" role="listitem">
-      <div class="server-name" title="Fantasy Lands Freeroam • (Android/PC)">Fantasy Lands Freeroam • (Android/PC)</div>
-      <div class="server-ip">54.39.85.166:8888</div>
-      <div class="server-players">14 / 50</div>
-      <div class="server-status">Online</div>
-    </div>
-    <div class="server-item" role="listitem">
-      <div class="server-name" title="SampDroid | RPG en Android·PC">SampDroid | RPG en Android·PC</div>
-      <div class="server-ip">15.235.72.16:7777</div>
-      <div class="server-players">45 / 1000</div>
-      <div class="server-status">Online</div>
-    </div>
-    <div class="server-item" role="listitem">
-      <div class="server-name" title="A.A. Role Play | Ðåãèîí 03">A.A. Role Play | Ðåãèîí 03</div>
-      <div class="server-ip">83.222.116.222:3333</div>
-      <div class="server-players">0 / 000</div>
-      <div class="server-status offline">Offline</div>
-    </div>
-    <div class="server-item" role="listitem">
-      <div class="server-name" title="Galaxy Roleplay [play.galaxy-rp.com]">Galaxy Roleplay [play.galaxy-rp.com]</div>
-      <div class="server-ip">play.galaxy-rp.com</div>
-      <div class="server-players">194 / 1000</div>
-      <div class="server-status">Online</div>
-    </div>
-    <div class="server-item" role="listitem">
-      <div class="server-name" title="FenixZone Roleplay - San Andreas Multiplayer">FenixZone Roleplay - San Andreas Multiplayer</div>
-      <div class="server-ip">s1.fenixzone.com</div>
-      <div class="server-players">841 / 1000</div>
-      <div class="server-status">Online</div>
-    </div>
-    <div class="server-item" role="listitem">
-      <div class="server-name" title="Horizonte Roleplay #1 | discord.gg/hzrp">Horizonte Roleplay #1 | discord.gg/hzrp</div>
-      <div class="server-ip">149.56.252.173:7777</div>
-      <div class="server-players">295 / 1000</div>
-      <div class="server-status">Online</div>
-    </div>
-    <div class="server-item" role="listitem">
-      <div class="server-name" title="[BRASIL] WAR EM LAS VEGAS | MINIGAMES / PVP |">[BRASIL] WAR EM LAS VEGAS | MINIGAMES / PVP |</div>
-      <div class="server-ip">135.148.159.205:7777</div>
-      <div class="server-players">94 / 600</div>
-      <div class="server-status">Online</div>
-    </div>
-    <div class="server-item" role="listitem">
-      <div class="server-name" title="SampDroidPruebas | Mundos | PVP |">SampDroidPruebas | Mundos | PVP |</div>
-      <div class="server-ip">pr.sampdroid.app:7777</div>
-      <div class="server-players">44 / 1000</div>
-      <div class="server-status">Online</div>
-    </div>
+    <!-- Puedes agregar más servidores aquí -->
   </div>
 
   <div class="button-group">
     <a href="https://discord.gg/Fcw7ZbHqjW" target="_blank" rel="noopener noreferrer" class="btn">Discord</a>
     <a href="https://youtu.be/gv35eTbXeZc?si=CfwqidvBkfXNEXas" target="_blank" rel="noopener noreferrer" class="btn">Juega</a>
   </div>
-
-  <style>
-    .button-group {
-      margin-top: 2rem;
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .btn {
-      font-family: 'Yourmate', cursive;
-      background-color: #ff5de9;
-      color: white;
-      padding: 12px 30px;
-      border-radius: 25px;
-      font-weight: 700;
-      text-decoration: none;
-      box-shadow: 0 0 8px #ff5de9cc;
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-      user-select: none;
-      cursor: pointer;
-    }
-    .btn:hover,
-    .btn:focus {
-      background-color: #e03ed1;
-      box-shadow: 0 0 12px #e03ed1cc;
-      outline: none;
-    }
-  </style>
 </body>
 </html>
