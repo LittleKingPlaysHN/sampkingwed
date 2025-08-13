@@ -580,21 +580,28 @@ footer a:focus {
   nav {
     flex-direction: column;
     padding: 1rem;
+    height: auto; /* evita que crezca demasiado */
   }
 
   .nav-logo-text {
     position: relative;
     left: 0;
     margin-bottom: 0.5rem;
+    justify-content: center;
+    gap: 1rem; /* separa logo de texto */
   }
 
   nav ul {
     flex-direction: column;
     gap: 0.5rem;
+    width: 100%; /* ocupa todo el ancho */
+    align-items: center;
   }
 
   nav ul li a {
-    font-size: 1rem;
+    font-size: 1rem; /* reduce tamaño para móviles */
+    text-align: center;
+    display: block;
   }
 
   .hero {
