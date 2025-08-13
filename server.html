@@ -23,7 +23,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      backdrop-filter: blur(6px); /* blur optimizado para móviles */
+      backdrop-filter: blur(6px);
     }
 
     .logo {
@@ -142,7 +142,7 @@
     @media (max-width: 900px) {
       body {
         padding: 1rem;
-        backdrop-filter: blur(4px); /* menos blur para pantallas pequeñas */
+        backdrop-filter: blur(4px);
       }
 
       .logo {
@@ -199,7 +199,6 @@
   <h1>Servidores SAMP - SampKing</h1>
 
   <div class="server-list" role="list">
-    <!-- Todos tus servidores aquí -->
     <div class="server-item" role="listitem">
       <div class="server-name" title="NewGamers #1 | Juego de Rol | Florida.">NewGamers #1 | Juego de Rol | Florida.</div>
       <div class="server-ip">s1.newgamers.es:7777</div>
@@ -212,9 +211,12 @@
       <div class="server-players">349 / 1000</div>
       <div class="server-status">Online</div>
     </div>
-    <!-- Agrega el resto de tus servidores aquí igual que los anteriores -->
-  </div>
-</div>
+    <div class="server-item" role="listitem">
+      <div class="server-name" title="NewGamers #3 | Juego de Rol | Texas.">NewGamers #3 | Juego de Rol | Texas.</div>
+      <div class="server-ip">s3.newgamers.es:7777</div>
+      <div class="server-players">123 / 1000</div>
+      <div class="server-status">Online</div>
+    </div>
     <div class="server-item" role="listitem">
       <div class="server-name" title="Rolven RP | Latinoamerica | v1.2">Rolven RP | Latinoamerica | v1.2</div>
       <div class="server-ip">samp.rolvenrp.com:7777</div>
@@ -276,6 +278,7 @@
       <div class="server-status">Online</div>
     </div>
   </div>
+
   <div class="button-group">
     <a href="https://discord.gg/Fcw7ZbHqjW" target="_blank" rel="noopener noreferrer" class="btn">Discord</a>
     <a href="https://youtu.be/gv35eTbXeZc?si=CfwqidvBkfXNEXas" target="_blank" rel="noopener noreferrer" class="btn">Juega</a>
