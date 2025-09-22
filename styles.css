@@ -1014,20 +1014,68 @@ footer a:focus {
 
 /* Ajustes en móviles */
 @media (max-width: 600px) {
-  .nav-logo-text {
-    flex-direction: column; /* apilar vertical si no cabe */
-    align-items: flex-start;
-    gap: 0.2rem;
+  /* NAV GENERAL */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  backdrop-filter: blur(3px);
+  border-bottom: 2px solid var(--pink);
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* espacio entre logo y links */
+}
+
+/* LOGO + TEXTO */
+.nav-logo-text {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-logo {
+  width: 40px;
+  height: 40px;
+}
+
+.nav-text {
+  font-family: 'Yourmate', cursive, sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--pink);
+}
+
+/* LINKS */
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+nav a {
+  color: var(--pink);
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+/* ------------------ MEDIA QUERY PARA MÓVILES ------------------ */
+@media (max-width: 600px) {
+  .nav-text { 
+    display: none; /* Oculta SampKing en móviles */
   }
 
-  .nav-logo-text .logo-main {
-    font-size: 1.1rem;
+  nav ul {
+    gap: 1rem;
+    font-size: 1rem;
   }
 
-  .nav-logo-text .logo-sub {
-    font-size: 0.9rem;
+  nav {
+    padding: 1rem;
   }
 }
+
 
   /* HERO */
   .hero-content h1 {
