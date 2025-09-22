@@ -982,14 +982,52 @@ footer a:focus {
 }
 
 @media (max-width: 600px) {
-  /* NAV */
+  /* NAV LOGO Y TEXTOS */
+.nav-logo-text {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* espacio entre logo y textos */
+  font-family: 'Yourmate', cursive, sans-serif;
+  color: var(--pink);
+  text-shadow: none;
+  user-select: none;
+  position: relative; /* quitar absolute para que fluya */
+  left: 0;
+}
+
+.nav-logo-text span {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* Para que los textos "SampKing" y "Skines" no se sobrepongan */
+.nav-logo-text .logo-main {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.nav-logo-text .logo-sub {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #FF80F4;
+}
+
+/* Ajustes en móviles */
+@media (max-width: 600px) {
   .nav-logo-text {
-    font-size: 1rem;
+    flex-direction: column; /* apilar vertical si no cabe */
+    align-items: flex-start;
+    gap: 0.2rem;
   }
 
-  nav a {
+  .nav-logo-text .logo-main {
+    font-size: 1.1rem;
+  }
+
+  .nav-logo-text .logo-sub {
     font-size: 0.9rem;
   }
+}
 
   /* HERO */
   .hero-content h1 {
