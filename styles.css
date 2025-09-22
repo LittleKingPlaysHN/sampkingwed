@@ -915,3 +915,94 @@ footer a:focus {
   border-color: #FF80F4;        /* borde rosado más claro al pasar el mouse */
 }
 
+/* ---------- MEDIA QUERIES PARA MÓVILES Y TABLETS ---------- */
+@media (max-width: 1024px) {
+  /* NAV */
+  nav {
+    padding: 1rem;
+    justify-content: space-between;
+  }
+  
+  .nav-logo-text {
+    left: 1rem;
+    gap: 1rem;
+  }
+  
+  nav ul {
+    gap: 1rem;
+  }
+
+  nav a {
+    font-size: 1rem;
+  }
+  
+  /* HERO */
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+
+  .hero {
+    padding: 0 0.5rem;
+    height: auto;
+    min-height: 60vh;
+  }
+
+  .hero-video {
+    height: 100%;
+  }
+  
+  /* FEATURES */
+  .features, .gallery, .stats, .steps {
+    padding: 2rem 1rem;
+    margin: 0 1rem 3rem 1rem;
+  }
+
+  .features-grid,
+  .gallery-grid,
+  .stats-grid,
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  /* Botones */
+  .download-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .download-buttons .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  /* NAV */
+  .nav-logo-text {
+    font-size: 1rem;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+  }
+
+  /* HERO */
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  /* CARDS, GALLERY, STATS */
+  .feature-card, .gallery-item, .stat-item, .step-item {
+    flex: 1 1 100%;
+  }
+}
+
