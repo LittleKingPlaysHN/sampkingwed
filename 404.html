@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Página No Encontrada</title>
+  <link rel="icon" type="image/png" href="/src/logo.png">
+
+  <style>
+    @font-face {
+      font-family: 'Yourmate';
+      src: url('fonts/Yourmate.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Yourmate', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+      background: url('/src/fondo6.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      text-align: center;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url('/src/fondo6.jpg') no-repeat center center fixed;
+      background-size: cover;
+      filter: blur(8px);
+      z-index: -1;
+    }
+
+    h1 {
+      font-size: 6rem;
+      color: #f700ff;
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.24);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #FFD700;
+      margin-bottom: 2rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      background-color: #0000006c;
+      color: #FF80F4;
+      padding: 15px 30px;
+      border-radius: 10px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #29292973;
+      color: #00FFFF;
+    }
+
+    .icon {
+      font-size: 4rem;
+      color: #FF80F4;
+      transition: color 0.3s ease;
+    }
+
+    .icon:hover {
+      color: #00FFFF;
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 4rem; }
+      h2 { font-size: 1.5rem; }
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: 3rem; }
+      h2 { font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+  <h1><i class="fas fa-exclamation-triangle icon"></i> 404</h1>
+  <h2>Página No Encontrada</h2>
+  <p>La API o página que estás buscando no existe.</p>
+  <a href="/index.html" class="btn">Volver al Inicio</a>
+</body>
+</html>

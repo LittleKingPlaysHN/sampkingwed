@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>API - SampKingMobile</title>
+  <link rel="icon" type="image/png" href="/src/logo.png" />
+  <style>
+    @font-face {
+      font-family: 'Yourmate';
+      src: url('fonts/Yourmate.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    body {
+      margin: 0;
+      padding: 2rem;
+      font-family: 'Yourmate', sans-serif;
+      background: url('src/fondo1.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      backdrop-filter: blur(6px);
+    }
+
+    .logo {
+      max-width: 200px;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      color: #FF80F4;
+      text-shadow: 0 0 5px rgba(0,0,0,0.7);
+      text-align: center;
+      margin-bottom: 1rem;
+      font-weight: normal;
+    }
+
+    .api-container {
+      max-width: 900px;
+      width: 100%;
+      background: rgba(0,0,0,0.6);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      color: #FF80F4;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+
+    p {
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+
+    code {
+      background: rgba(255,255,255,0.1);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    pre {
+      background: rgba(255,255,255,0.1);
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-family: monospace;
+      font-size: 0.95rem;
+      color: #fff;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      font-family: 'Yourmate', cursive;
+      background-color: #FF80F4;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 25px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 0 8px #ff5de900;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .btn:hover,
+    .btn:focus {
+      background-color: #FF80F4;
+      box-shadow: 0 0 12px #00000000;
+      outline: none;
+    }
+
+    @media (max-width: 900px) {
+      .api-container { padding: 1.5rem; }
+      .btn { padding: 10px 20px; font-size: 0.95rem; }
+    }
+
+    @media (max-width: 500px) {
+      h1 { font-size: 1.5rem; }
+      .logo { max-width: 120px; }
+      .api-container { padding: 1rem; }
+      .btn { padding: 8px 18px; font-size: 0.9rem; }
+    }
+  </style>
+</head>
+<body>
+  <img src="src/logo.png" alt="Logo SampKing" class="logo" />
+  <h1>API SampKing - Documentación</h1>
+
+  <div class="api-container">
+    <h2>Descripción</h2>
+    <p>Esta API permite consultar información de servidores SAMP (San Andreas Multiplayer) en tiempo real, incluyendo jugadores conectados y estado del servidor.</p>
+
+    <h2>Endpoint</h2>
+    <p><code>GET https://apisampking.onrender.com/api/samp</code></p>
+
+    <h2>Parámetros</h2>
+    <ul>
+      <li><code>host</code> (string) - IP o dominio del servidor.</li>
+      <li><code>port</code> (number) - Puerto del servidor (usualmente 7777).</li>
+    </ul>
+
+    <h2>Ejemplo de uso</h2>
+    <pre>
+fetch("https://apisampking.onrender.com/api/samp?host=144.217.58.224&port=7777")
+  .then(res =&gt; res.json())
+  .then(data =&gt; console.log(data));
+    </pre>
+
+    <h2>Respuesta</h2>
+    <p>La API devuelve un objeto JSON con la siguiente estructura:</p>
+    <pre>
+{
+  "online": true,
+  "players": 12,
+  "maxplayers": 100,
+  "hostname": "NewGamers #0 | Custom | Multigames"
+}
+    </pre>
+
+    <h2>Ejemplo en HTML</h2>
+    <pre>
+&lt;script&gt;
+  fetch("https://apisampking.onrender.com/api/samp?host=144.217.58.224&port=7777")
+    .then(res =&gt; res.json())
+    .then(data =&gt; {
+      console.log("Jugadores: " + data.players);
+      console.log("Estado: " + (data.online ? "Online" : "Offline"));
+    });
+&lt;/script&gt;
+    </pre>
+  </div>
+
+  <div class="button-group">
+    <a href="servers.html" class="btn">Servidores</a>
+    <a href="descargas.html" class="btn">Descargas</a>
+  </div>
+
+  <footer>
+    &copy; 2025 La Realeza Studios. Todos los derechos reservados.
+  </footer>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="/src/logo.png" />
+  <title>Servidores - SampKingMobile</title>
+  <style>
+    @font-face {
+      font-family: 'Yourmate';
+      src: url('fonts/Yourmate.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    body {
+      background: url('src/fondo7.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Yourmate', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+      margin: 0;
+      padding: 2rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      backdrop-filter: blur(6px);
+    }
+
+    .logo {
+      display: block;
+      margin: 0 auto 1rem auto;
+      max-width: 200px;
+      height: auto;
+    }
+
+    h1 {
+      color: #FF80F4;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 5px rgba(0,0,0,0.7);
+      font-weight: normal;
+      text-align: center;
+    }
+
+    .server-list {
+      max-width: 900px;
+      width: 100%;
+      background: rgba(0,0,0,0.6);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(247, 0, 255, 0);
+      margin-bottom: 2rem;
+    }
+
+    .server-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid #000000aa;
+      align-items: center;
+      transition: background 0.3s ease;
+      flex-wrap: wrap;
+    }
+
+    .server-item:last-child {
+      border-bottom: none;
+    }
+
+    .server-item:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .server-name {
+      font-weight: 700;
+      font-size: 1.2rem;
+      max-width: 45%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-family: 'Yourmate', cursive;
+    }
+
+    .server-ip {
+      font-family: monospace;
+      color: #FF80F4;
+      max-width: 25%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-weight: 600;
+    }
+
+    .server-status {
+      font-weight: 700;
+      color: #0f0;
+      min-width: 80px;
+      text-align: center;
+      font-family: 'Yourmate', cursive;
+    }
+
+    .server-status.offline {
+      color: #f33;
+    }
+
+    .server-players {
+      min-width: 100px;
+      text-align: center;
+      font-weight: 600;
+      font-family: 'Yourmate', cursive;
+    }
+
+    .button-group {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      font-family: 'Yourmate', cursive;
+      background-color: #FF80F4;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 25px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 0 8px #ff5de900;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+      cursor: pointer;
+    }
+
+    .btn:hover,
+    .btn:focus {
+      background-color: #FF80F4;
+      box-shadow: 0 0 12px #00000000;
+      outline: none;
+    }
+
+    @media (max-width: 900px) {
+      body { padding: 1rem; backdrop-filter: blur(4px); }
+      .logo { max-width: 150px; }
+      h1 { font-size: 1.8rem; }
+      .server-item { flex-direction: column; align-items: flex-start; gap: 0.5rem; padding: 0.8rem 1rem; }
+      .server-name, .server-ip, .server-status, .server-players { max-width: 100%; }
+      .server-status, .server-players { text-align: left; }
+      .btn { padding: 10px 20px; font-size: 0.95rem; }
+    }
+
+    @media (max-width: 500px) {
+      h1 { font-size: 1.5rem; }
+      .logo { max-width: 120px; }
+      .server-item { padding: 0.6rem 0.8rem; }
+      .btn { padding: 8px 18px; font-size: 0.9rem; }
+    }
+  </style>
+</head>
+<body>
+  <img src="src/logo.png" alt="Logo SampKing" class="logo" />
+  <h1>Servidores SAMP - Destacados</h1>
+
+  <div class="server-list" role="list" id="server-list">
+    <!-- Los servidores se cargarán aquí dinámicamente -->
+  </div>
+
+  <div class="button-group">
+    <a href="https://discord.gg/Fcw7ZbHqjW" target="_blank" rel="noopener noreferrer" class="btn">Discord</a>
+    <a href="https://youtu.be/iBoWAqj0K4A?si=8lrCaFfeR2Mqo3nL" target="_blank" rel="noopener noreferrer" class="btn">Juega</a>
+  </div>
+
+  <script>
+    const servers = [
+      { name: "NewGamers #0 | Custom | Multigames", host: "144.217.58.224", port: 7777 },
+      { name: "NewGamers #1 | Florida RP | Payday X4", host: "54.39.85.215", port: 7777 },
+      { name: "NewGamers #2 | New York | Payday X4", host: "51.222.193.90", port: 7777 },
+      { name: "NewGamers #3 | Texas | Payday X4 ", host: "142.44.251.136", port: 7777 },
+      { name: "Rolven RP | Latinoamerica | v1.2", host: "samp.rolvenrp.com", port: 7777 },
+      { name: "SampDroid | RolePlay en Android·PC", host: "158.69.152.89", port: 7777 },
+      { name: "Fz Roleplay | Rol S1", host: "s1.fenixzone.com", port: 7777 },
+      { name: "Galaxy Roleplay [play.galaxy-rp.com]", host: "54.39.139.249", port: 7777 },
+      { name: "[ESP] WestZone RP | [Sistema de /duelo]", host: "149.56.242.37", port: 7777 },
+      { name: "Gotham City – ¡Experiencia x2!", host: "66.70.160.241", port: 7777 },
+      { name: "Fz Roleplay | Rol S2", host: "s2.fenixzone.com", port: 7777 },
+      { name: "[BRASIL] WAR EM LAS VEGAS | MINIGAMES / PVP", host: "151.242.227.211", port: 7777 },
+      { name: "(ESP) SampDroid | Chat de Voz en Android·PC", host: "198.50.156.231", port: 7777 },
+      { name: "Fz Roleplay | Rol S3", host: "s3.fenixzone.com", port: 7777 },
+      { name: "[ESP] • MRO Roleplay • [Experiencia x11]", host: "51.81.23.57", port: 7777 },
+      { name: "[ESP] Seoul Roleplay [Android/PC] - [x2 EXP]", host: "192.99.245.207", port: 7777 },
+      { name: "Brasil Play Shox RPG #1", host: "149.56.252.191", port: 7777 },
+      { name: "Horizonte Roleplay #1", host: "149.56.252.173", port: 7777 },
+      { name: "Dixel Roleplay | Consigue Cofres", host: "198.50.207.186", port: 7777 }
+    ];
+
+    const serverList = document.getElementById("server-list");
+
+    // Crear elementos iniciales con "Cargando..."
+    servers.forEach(server => {
+      const item = document.createElement("div");
+      item.classList.add("server-item");
+      item.id = `server-${server.host.replace(/\./g,'-')}`;
+      item.innerHTML = `
+        <div class="server-name" title="${server.name}">${server.name}</div>
+        <div class="server-ip">${server.host}:${server.port}</div>
+        <div class="server-players">...</div>
+        <div class="server-status">Cargando...</div>
+      `;
+      serverList.appendChild(item);
+    });
+
+    async function fetchServerData(server) {
+      try {
+        const res = await fetch(`https://apisampking.onrender.com/api/samp?host=${server.host}&port=${server.port}`);
+        const data = await res.json();
+        return { server, data };
+      } catch (err) {
+        return { server, data: { online: false } };
+      }
+    }
+
+    async function updateServers() {
+      const results = await Promise.all(servers.map(fetchServerData));
+
+      results.forEach(({ server, data }) => {
+        const item = document.getElementById(`server-${server.host.replace(/\./g,'-')}`);
+        const statusClass = data.online ? "" : "offline";
+        const playersText = data.online ? `${data.players}/${data.maxplayers}` : "0 / 0";
+        const statusText = data.online ? "Online" : "Offline";
+
+        item.querySelector(".server-players").textContent = playersText;
+        item.querySelector(".server-status").textContent = statusText;
+        item.querySelector(".server-status").className = `server-status ${statusClass}`;
+      });
+    }
+
+    updateServers();
+    setInterval(updateServers, 30000);
+  </script>
+
+</body>
+</html>

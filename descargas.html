@@ -3,22 +3,131 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SAMP KING MOBILE</title>
-  <link rel="stylesheet" href="descargas.css" />
+  <title>Descargas - SampKingMobile</title>
+  <link rel="icon" type="image/png" href="/src/logo.png" />
   <style>
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: url('src/fondo.jpg') no-repeat center center fixed;
-      background-size: cover;
-      filter: blur(8px);
-      z-index: -1;
+    @font-face {
+      font-family: 'Yourmate';
+      src: url('fonts/Yourmate.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
     }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+ body {
+      font-family: 'Yourmate', sans-serif;
+      margin: 0;
+      padding: 2rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #fff;
+      background: url('src/fondo4.png') no-repeat center center fixed;
+      background-size: cover;
+      backdrop-filter: blur(6px); 
+    }
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('src/fondo4.png') center center / cover no-repeat;
+  filter: blur(8px); 
+  z-index: -1;
+}
 
     .highlight {
       color: #ff80f4; 
       font-weight: bold;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .logo {
+      width: 200px;
+      max-width: 80%;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #ff83e0;
+      letter-spacing: 1px;
+      text-shadow: 0 0 5px rgba(0,0,0,0.7);
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    main {
+  width: 100%;
+  max-width: 900px;
+  padding: 2rem;
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 12px;
+  text-align: center;
+}
+
+
+    .button-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .button {
+      background-color: #00000046;
+      color: white;
+      text-decoration: none;
+      padding: 15px 30px;
+      border-radius: 10px;
+      font-weight: bold;
+      font-family: 'Yourmate', sans-serif;
+      letter-spacing: 1px;
+      flex: 1 1 200px;
+      transition: background-color 0.3s ease;
+      text-align: center;
+      user-select: none;
+    }
+
+    .button:hover,
+    .button:focus {
+      background-color: #00000073;
+      outline: none;
+    }
+
+    footer {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.875rem;
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      main { padding: 1.5rem; }
+      .button { flex: 1 1 100%; padding: 12px 20px; font-size: 0.95rem; }
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: 1.6rem; }
+      .logo { width: 150px; }
+      main { padding: 1rem; }
+      .button { padding: 10px 15px; font-size: 0.85rem; }
     }
   </style>
 </head>
@@ -30,14 +139,14 @@
 
   <main>
     <div class="button-row">
-      <a href="https://sampking.wordpress.com" target="_blank" rel="noopener noreferrer" class="button">
-        Visita Nuestro <span class="highlight">Foro</span>
+      <a href="server.html" target="_blank" rel="noopener noreferrer" class="button">
+        Visita Nuestros <span class="highlight">Servers</span>
       </a>
       <a href="https://discord.gg/Fcw7ZbHqjW" target="_blank" rel="noopener noreferrer" class="button">
         Visita Nuestro <span class="highlight">Discord</span>
       </a>
-      <a href="https://sampking.wordpress.com" target="_blank" rel="noopener noreferrer" class="button">
-        Visita Nuestra <span class="highlight">Website</span>
+      <a href="https://sampskins.vercel.app" target="_blank" rel="noopener noreferrer" class="button">
+        Visita Nuestras <span class="highlight">Skines</span>
       </a>
     </div>
 
@@ -51,17 +160,17 @@
     </div>
 
     <div class="button-row">
-      <a href="https://youtu.be/eECisdOwsx4?si=FnYUkcyaL6eZ7SSj" target="_blank" rel="noopener noreferrer" class="button">
+      <a href="https://youtu.be/iBoWAqj0K4A?si=8lrCaFfeR2Mqo3nL" target="_blank" rel="noopener noreferrer" class="button">
         Tutorial <span class="highlight">PC</span>
       </a>
-      <a href="https://youtu.be/tYmIeABUWT8?si=sdTcVLNyc_jnniax" target="_blank" rel="noopener noreferrer" class="button">
+      <a href="https://youtube.com/shorts/wFHzRfAZLQQ?si=p08oSuKfkToLxZFY" target="_blank" rel="noopener noreferrer" class="button">
         Tutorial <span class="highlight">Mobile</span>
       </a>
     </div>
   </main>
 
   <footer>
-    &copy; 2025 SampKing. Todos los derechos reservados.
+    &copy; 2025 La Realeza Studios. Todos los derechos reservados.
   </footer>
 </body>
 </html>
